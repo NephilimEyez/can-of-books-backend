@@ -20,7 +20,17 @@ Name of feature: _initial backend implementation_
 
 Estimate of time needed to complete: _30 min_
 
-Start time: _5:05_
+Start time: _5:05pm_
+
+Finish time: _5:30pm_
+
+Actual time needed to complete: _25 min_
+
+Name of feature: _post and delete_
+
+Estimate of time needed to complete: _1 hour_
+
+Start time: _6:07pm_
 
 Finish time: _5:30_
 

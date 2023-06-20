@@ -1,11 +1,30 @@
-# Start your own "Can of Books" App
+# Can o Books (BackEnd)
 
-This repository has starter code to begin work on creating your own online bookshelf.
+**Author**: Gerald Bruno
+**Version**: 1.0.0 
 
-## What can books do?
+## Overview
+This is the backend of a can o books website where users can add or delete books from a database.
 
-Books are life-changing. They have the power to enlighten, educate, entertain, heal, and help us grow. Build out this code base to create an web app to track what books have impacted you, and what's recommended to read next.
+## Getting Started
+you're going to need to edit your env. file (See sample) and run an npm install
 
-## Use this template
+## Architecture
+We're using axios, express, cors, dotenv, mongo, mongoose, html, css, JS, REACT, and bootstrap (I think that's all)
 
-Clone this repo to your own account with the green "Use this template" button. Then, add any collaborators. Now you are ready to start adding features! Deploy your site to let the world know which books have had the greatest impact on you, and what's recommended. Enjoy!
+## Change Log
+Here we go
+
+## Estimates
+Name of feature: _initial backend implementation_
+
+Estimate of time needed to complete: _30 min_
+
+Start time: _5:05_
+
+Finish time: _5:30_
+
+Actual time needed to complete: _25 min_
+
+## Credit and Collaborations
+Thanks to US Cellular, for having such horrible internet that I may not get to continue the course. 

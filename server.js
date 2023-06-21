@@ -40,7 +40,7 @@ async function getBooks(request, response, next) {
 
 async function addBook(request, response, next) {
   try {
-    let newBook = await Book.create(request.body);
+    let newBook = await Books.create(request.body);
     response.status(200).send(newBook);
   } catch (error) {
     next(error);

@@ -28,6 +28,8 @@ app.post('/books', addBook);
 
 app.delete('/books/:bookID', deleteBook);
 
+app.put('/books/:bookID', updateBook);
+
 
 async function getBooks(request, response, next) {
   try {
@@ -54,6 +56,17 @@ async function deleteBook(request, response, next) {
     response.status(200).send('Book was deleted from the db!');
   } catch (error) {
     next(error);
+  }
+}
+
+async function updateBook(request, response, next) {
+  try {
+    let id = request.params.bookID;
+    let data = request.body;
+    let updatedBook = await Books.findByIdAndUpdate(id, data, { new: true, overwrite: true });
+    response.status(200).send(updatedBook);
+  } catch (error) {
+    next(error)
   }
 }
 

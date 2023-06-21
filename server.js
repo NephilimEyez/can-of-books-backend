@@ -8,6 +8,7 @@ const Books = require('./models/books');
 
 const app = express();
 app.use(cors());
+app.use(express.json());
 
 const PORT = process.env.PORT || 3002;
 
@@ -21,13 +22,12 @@ app.listen(PORT, () => console.log(`listening on ${PORT}`));
 
 mongoose.connect(process.env.DB_URL);
 
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function () {
-  console.log('Mongoose is connected');
-});
-
 app.get('/books', getBooks);
+
+app.post('/books', addBook);
+
+app.delete('/books/:bookID', deleteBook);
+
 
 async function getBooks(request, response, next) {
   try {
@@ -35,6 +35,24 @@ async function getBooks(request, response, next) {
     response.status(200).send(allBooks);
   } catch (error) {
     next(error)
+  }
+}
+
+async function addBook(request, response, next) {
+  try {
+    let newBook = await Books.create(request.body);
+    response.status(200).send(newBook);
+  } catch (error) {
+    next(error);
+  }
+}
+
+async function deleteBook(request, response, next) {
+  try {
+    let id = request.params.bookID;
+    await Books.findByIdAndDelete(id);
+  } catch (error) {
+    next(error);
   }
 }
 

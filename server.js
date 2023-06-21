@@ -51,6 +51,7 @@ async function deleteBook(request, response, next) {
   try {
     let id = request.params.bookID;
     await Books.findByIdAndDelete(id);
+    response.status(200).send('Book was deleted from the db!');
   } catch (error) {
     next(error);
   }
